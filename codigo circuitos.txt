@@ -1,0 +1,60 @@
+const int mov= 7;
+const int movled = 6;
+const int buz=5;
+const int luz =A0;
+const int rel= 4;
+const int luzled=1;
+int valormov=1;
+int valorluz=0;
+int valordist=0;
+const int pingPin = 11;
+unsigned int duration, inches;
+void setup() {
+  Serial.begin(9600);
+  pinMode(movled, OUTPUT);
+  pinMode (mov, INPUT);
+  pinMode(buz, OUTPUT);
+  pinMode (rel, OUTPUT);
+  pinMode(luz, INPUT);
+  
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  int distant=0;
+  valormov=digitalRead(mov);
+  valorluz= analogRead(luz);
+  //valordist = digitalRead(eco);
+   //Serial.println(valormov);
+  //Serial.println(valorluz);
+pinMode(pingPin, OUTPUT); // Set pin to OUTPUT
+digitalWrite(pingPin, LOW); // Ensure pin is low
+delayMicroseconds(2);
+digitalWrite(pingPin, HIGH); // Start ranging
+delayMicroseconds(5); // with 5 microsecond burst
+digitalWrite(pingPin, LOW); // End ranging
+pinMode(pingPin, INPUT); // Set pin to INPUT
+duration = pulseIn(pingPin, HIGH); // Read echo pulse
+inches = duration / 74 / 2; // Convert to inches
+Serial.println(inches); // Display result
+delay(200); // Short delay
+//delay(500); 
+  if (valormov == 0){
+    // Serial.println(valor);
+   //digitalWrite(buz, HIGH);
+    digitalWrite(movled, HIGH);
+  }
+  else{
+    //digitalWrite(buz,LOW);
+    digitalWrite(movled, LOW);
+  }
+  if (valorluz<=1016){
+ 		digitalWrite(rel,LOW); 
+	}
+  else{
+ 		digitalWrite(rel,HIGH);
+    }
+delay(200);
+  }
+   
+  

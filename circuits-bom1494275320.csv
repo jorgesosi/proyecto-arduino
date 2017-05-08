@@ -1,0 +1,71 @@
+Circuits.io Bill Of Materials
+IDS,#,Component,Footprint,Properties
+L  Lampara,1,Light bulb  Incandescent light bulb 12V / 3W,2 pin,""
+U1,1,Arduino Uno R3  The official Arduino Uno Rev3,Arduino Uno R3,"const int mov= 7;
+const int movled = 6;
+const int buz=5;
+const int luz =A0;
+const int rel= 4;
+const int luzled=1;
+int valormov=1;
+int valorluz=0;
+int valordist=0;
+const int pingPin = 11;
+unsigned int duration, inches;
+void setup() {
+  Serial.begin(9600);
+  pinMode(movled, OUTPUT);
+  pinMode (mov, INPUT);
+  pinMode(buz, OUTPUT);
+  pinMode (rel, OUTPUT);
+  pinMode(luz, INPUT);
+  
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  int distant=0;
+  valormov=digitalRead(mov);
+  valorluz= analogRead(luz);
+  //valordist = digitalRead(eco);
+   //Serial.println(valormov);
+  //Serial.println(valorluz);
+pinMode(pingPin, OUTPUT); // Set pin to OUTPUT
+digitalWrite(pingPin, LOW); // Ensure pin is low
+delayMicroseconds(2);
+digitalWrite(pingPin, HIGH); // Start ranging
+delayMicroseconds(5); // with 5 microsecond burst
+digitalWrite(pingPin, LOW); // End ranging
+pinMode(pingPin, INPUT); // Set pin to INPUT
+duration = pulseIn(pingPin, HIGH); // Read echo pulse
+inches = duration / 74 / 2; // Convert to inches
+Serial.println(inches); // Display result
+delay(200); // Short delay
+//delay(500); 
+  if (valormov == 0){
+    // Serial.println(valor);
+   //digitalWrite(buz, HIGH);
+    digitalWrite(movled, HIGH);
+  }
+  else{
+    //digitalWrite(buz,LOW);
+    digitalWrite(movled, LOW);
+  }
+  if (valorluz<=1016){
+ 		digitalWrite(rel,LOW); 
+	}
+  else{
+ 		digitalWrite(rel,HIGH);
+    }
+delay(200);
+  }
+   
+   code"
+PIEZO  parlante,1,"Piezo  This is the Piezo included in the Arduino Kit, it is 22mm in diameter and is rated up to 25V p-p.  See datasheet for frequency response.",PIEZO 22mm DIAMETER,""
+D  led,1,"LED  A type of diode that illuminates when electricity passes through it. Unlike an RGB Led, this one has a defined color.",IRL80A,"650 red[[""green"",""Green""],[""yellow"",""Yellow""],[""orange"",""Orange""],[""blue"",""Blue""],[""red"",""Red""]]"
+"R1, R2",2,"Resistor  Resist the flow of electrical energy in a circuit, changing the voltage and current as a result. ",0411/12,1 kohm
+PIR  sensor movimiento,1,PIR Sensor  Passive infrared motion sensor. Outputs a high-signal when motion is detected in its field of view. https://www.parallax.com/product/555-28027,PIR Sensor,""
+P   fuente de poder,1,Power Supply  This is the component used to represent the power supply in the Electronics Workbench (the breadboard simulator).  There are multiple footprints so if you are designing a PCB be sure to choose which footprint works best for your design.,"Power Header 0.1"" through hole 3","9 , 0.8 "
+K2,1,Relay SPDT  5V SPDT miniature power relay,DIL12,""
+Q  sensor de luz,1,Ambient Light Sensor [Phototransistor]  Uses ambiant energy to control the internal base of an internal NPN transistor.,Phototransistor,""
+PING  sensor ultrasonido,1,Ultrasonic Distance Sensor  This is the [Parallax PING)))](https://www.parallax.com/product/28015) ultrasonic distance sensor.,Ultrasonic Distance Sensor,"-3.0455855537181953 hidden, -147.1278216701901 hidden"
