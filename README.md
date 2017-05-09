@@ -86,7 +86,7 @@ void loop() {
 	delay(200);
 }
 ```
-Enlace al proyecto en circuit.io
+Enlace al proyecto en 
 [circuit.io](https://circuits.io/circuits/4821745-circuito-laboratorio-lenguaje)
 
 
