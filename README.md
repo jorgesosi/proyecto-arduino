@@ -14,12 +14,12 @@ Proyecto
 Vista de componetes
 -----
 
-![alt text] (https://github.com/jorgesosi/proyecto-arduino/blob/master/img/componentes.png)
+![imagen](https://github.com/jorgesosi/proyecto-arduino/blob/master/img/componentes.png)
 
 Vista de esquema
 -----
 
-![alt text] (https://github.com/jorgesosi/proyecto-arduino/blob/master/img/esquema.png)
+![imagen](https://github.com/jorgesosi/proyecto-arduino/blob/master/img/esquema.png)
 
 Codigo fuente
 -----
