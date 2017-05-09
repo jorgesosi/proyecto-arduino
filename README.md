@@ -14,12 +14,12 @@ Proyecto
 Vista de componetes
 -----
 
-![Vista Componetes] (img/vista componentes.png?raw=true)
+![Vista Componetes] (img/componentes.png?raw=true)
 
 Vista de esquema
 -----
 
-![Vista Esquema] (img/vista esquema.png?raw=true)
+![Vista Esquema] (img/esquema.png?raw=true)
 
 Codigo fuente
 -----
