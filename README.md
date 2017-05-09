@@ -11,6 +11,23 @@ Instituto Superior Capacitas.
 
 Proyecto
 -----
+Ingredientes
+-----
+```
+1 x Arduino Uno R3
+1 x Light bulb Incandescent light bulb 12V / 3W 
+1 x PIEZO 22mm DIAMETER
+1 x led
+1 x PIR Sensor  Passive infrared motion sensor
+1 x Power Supply (simulador de corriente)
+1 x Relay SPDT  5V SPDT
+1 x Ambient Light Sensor [Phototransistor]
+1 x Ultrasonic Distance Sensor
+1 x LCD display 16x2
+1 x Potentiometer 10k
+1 x resistor 220 ohm
+2 x resistor 1 kohm
+```
 Vista de componetes
 -----
 
